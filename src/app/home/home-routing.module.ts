@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { Tab1Page } from './tab1.page';
+import { HomePage } from './home.page';
 
-const routes: Routes = [
-  {
-    path: '',
-    component: Tab1Page,
-  },
-  {
+export const routes: Routes = [
+	{
+		path: '',
+		component: HomePage,
+	},
+	{
 		path: 'membership-dashboard',
 		loadChildren: () =>
 			import('../membership-dashboard/membership-dashboard.module').then((m) => m.MembershipDashboardPageModule),
@@ -15,7 +15,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+	imports: [RouterModule.forChild(routes)],
+	exports: [RouterModule],
 })
-export class Tab1PageRoutingModule {}
+export class HomePageRoutingModule {}
